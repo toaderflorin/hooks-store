@@ -1,5 +1,5 @@
 import { Dispatch } from 'react'
-import { ADD_TASK, REMOVE_TASK, TOGGLE_TASK, TasksState, TasksAction } from './types'
+import { TasksState, TasksAction } from './types'
 
 export const ADD_TASK = 'ADD_TASK'
 export const REMOVE_TASK = 'REMOVE_TASK'
