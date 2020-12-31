@@ -1,4 +1,5 @@
-import { TasksState, Task, TasksAction, ADD_TASK, REMOVE_TASK, TOGGLE_TASK } from './types'
+import { TasksState, Task, TasksAction } from './types'
+import { ADD_TASK, REMOVE_TASK, TOGGLE_TASK } from './actions'
 
 export const initialTasksState: TasksState = {
   tasks: []
@@ -18,11 +19,11 @@ export function tasksReducer(state: TasksState, action: TasksAction) {
         tasks: [...state.tasks, task]
       }
     }
-    
+
     case REMOVE_TASK: {
       return {
         ...state,
-        tasks: state.tasks.filter((task:Task) => task.id !== action.taskId)
+        tasks: state.tasks.filter((task: Task) => task.id !== action.taskId)
       }
     }
 
@@ -31,9 +32,9 @@ export function tasksReducer(state: TasksState, action: TasksAction) {
         ...state,
         tasks: state.tasks.map((task: Task) => {
           if (task.id === action.taskId) {
-            return { 
+            return {
               ...task,
-              ticked: !task.ticked 
+              ticked: !task.ticked
             }
           } else {
             return task

@@ -1,4 +1,5 @@
-import { SettingsState, SettingsAction, SET_VALUE } from './types'
+import { SettingsState, SettingsAction } from './types'
+import { SET_VALUE } from './actions'
 
 export const initialSettingsState: SettingsState = {
   value: ''
