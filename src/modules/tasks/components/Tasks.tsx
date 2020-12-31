@@ -3,25 +3,29 @@ import { Task } from '../store/types'
 import { AppContext } from '../../../AppContext'
 import * as tasksActions from '../store/actions'
 
-const { execute } = useContext(AppContext)
 
-type Props = {
-  tasks: Task
-}
+export default function Tasks() {
+  const { state, execute } = useContext(AppContext)
 
-export default function Tasks(props: Props) {
   function addTaskClick() {
     execute(tasksActions.addTask('description'))
   }
 
+  const tasks = state.tasks.tasks
+
   return (
-    <div>
+    <div style={{ marginTop: '200px' }}>
       <div>
+        asdasdass
         <input type="text" />
         <button onClick={addTaskClick} />
       </div>
       <div>
-
+        {tasks.map((task: Task) => (
+          <div>
+            {task.description}
+          </div>
+        ))}
       </div>
     </div>
   )
