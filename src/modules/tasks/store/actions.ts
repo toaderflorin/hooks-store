@@ -1,11 +1,29 @@
-import { TasksState } from './types'
+import { Dispatch } from 'react'
+import { ADD_TASK, REMOVE_TASK, TOGGLE_TASK, TasksState, TasksAction } from './types'
 
 export function addTask(description: string) {
-  return async function (state: any, dispatch: any /* Dispatch<DashboardAction> */) {
-  //   try {
-  //     dispatch({
-  //       type: LOAD_PARTNER_SUMMARY_REQUEST,
-  //       partnerId
-  //     })
+  return async function (state: TasksState, dispatch: Dispatch<TasksAction>) {
+    dispatch({
+      type: ADD_TASK,
+      description
+    })
+  }
+}
+
+export function removeTask(taskId: string) {
+  return async function (state: TasksState, dispatch: Dispatch<TasksAction>) {
+    dispatch({
+      type: REMOVE_TASK,
+      taskId
+    })
+  }
+}
+
+export function toggleSize(taskId: string) {
+  return async function (state: TasksState, dispatch: Dispatch<TasksAction>) {
+    dispatch({
+      type: TOGGLE_TASK,
+      taskId
+    })
   }
 }

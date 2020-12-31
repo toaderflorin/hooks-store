@@ -1,20 +1,10 @@
-import Tasks from '../components/Tasks'
-import { TasksState, Task } from './types'
-
-const ADD_TASK = 'ADD_TASK'
-const REMOVE_TASK = 'REMOVE_TASK'
-const TOGGLE_TASK = 'TOGGLE_TASK'
+import { TasksState, Task, TasksAction, ADD_TASK, REMOVE_TASK, TOGGLE_TASK } from './types'
 
 export const initialTasksState: TasksState = {
   tasks: []
 }
 
-export type TasksAction =
-  | { type: typeof ADD_TASK, description: string }
-  | { type: typeof REMOVE_TASK, taskId: string }
-  | { type: typeof TOGGLE_TASK, taskId: string }
-
-export function dashboardReducer(state: TasksState, action: TasksAction) {
+export function tasksReducer(state: TasksState, action: TasksAction) {
   switch (action.type) {
     case ADD_TASK: {
       const task = {
