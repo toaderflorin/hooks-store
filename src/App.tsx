@@ -1,14 +1,17 @@
 import React from 'react'
 import './App.css'
 import { BrowserRouter, Route } from 'react-router-dom'
+import Nav from './modules/nav/components/Nav'
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <Route path="/" />
-      <Route path="/settings" />
-    </BrowserRouter>
+    <div>
+      <Nav />
+      <BrowserRouter>
+        <Route path="/" />
+        <Route path="/settings" />
+      </BrowserRouter>
+    </div>
   )
 }
 
-export default App
