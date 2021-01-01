@@ -12,9 +12,8 @@ export default function App() {
       <BrowserRouter>
         <Nav />
         <Route exact path="/" component={Tasks} />
-        <Route exact path="/settings" component={Settings} />
+        <Route exact path="/notes" component={Settings} />
       </BrowserRouter>
     </AppContextProvider>
   )
 }
-
