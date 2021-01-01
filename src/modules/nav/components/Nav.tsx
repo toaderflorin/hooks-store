@@ -9,8 +9,8 @@ export default function Nav() {
         The title
       </div>
       <div>
-        <Link to="/">To link 1</Link>
-        <Link to="/settings">To link 2</Link>
+        <Link to="/">Tasks</Link>
+        <Link to="/settings">Notes</Link>
       </div>
     </div>
   )

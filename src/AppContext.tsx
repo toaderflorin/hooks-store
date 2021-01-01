@@ -1,14 +1,14 @@
 import React, { useReducer, Dispatch } from 'react'
-import { settingsReducer, initialSettingsState } from './modules/settings/store/reducer'
+import { notesReducer, initialNotesState } from './modules/notes/store/reducer'
 import { tasksReducer, initialTasksState } from './modules/tasks/store/reducer'
 import { AppState, ChildrenProps } from './modules/types'
-import { SettingsAction } from './modules/settings/store/types'
+import { NotesAction } from './modules/notes/store/types'
 import { TasksAction } from './modules/tasks/store/types'
 
 export type ExecuteFunc = (state: AppState, dispatch: Dispatch<any>) => Promise<void> | void
 
 type Action =
-  | SettingsAction
+  | NotesAction
   | TasksAction
 
 export type AppContextType = {
@@ -18,12 +18,12 @@ export type AppContextType = {
 
 const initialAppState = {
   tasks: initialTasksState,
-  settings: initialSettingsState
+  notes: initialNotesState
 }
 
 function appReducer(state: AppState, action: Action) {
   return {
-    settings: settingsReducer(state.settings, action as SettingsAction),
+    notes: notesReducer(state.notes, action as NotesAction),
     tasks: tasksReducer(state.tasks, action as TasksAction)
   }
 }
