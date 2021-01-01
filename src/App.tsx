@@ -9,10 +9,10 @@ import Settings from './modules/settings/components/Settings'
 export default function App() {
   return (
     <AppContextProvider>
-      <Nav />
       <BrowserRouter>
-        <Route path="/" component={Tasks} />
-        <Route path="/settings" component={Settings} />
+        <Nav />
+        <Route exact path="/" component={Tasks} />
+        <Route exact path="/settings" component={Settings} />
       </BrowserRouter>
     </AppContextProvider>
   )

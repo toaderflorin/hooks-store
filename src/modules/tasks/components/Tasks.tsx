@@ -24,7 +24,7 @@ export default function Tasks() {
   const tasks = state.tasks.tasks
 
   return (
-    <div style={{ marginTop: '100px', padding: '15px' }}>
+    <div className="screen">
       <div>
         <input ref={descriptionInputRef} type="text" />
         <button onClick={addTaskClick}>Add</button>
