@@ -1,5 +1,6 @@
 import { TasksState, Task, TasksAction } from './types'
 import { ADD_TASK, REMOVE_TASK, TOGGLE_TASK } from './actions'
+import { v4 } from 'uuid'
 
 export const initialTasksState: TasksState = {
   tasks: []
@@ -9,7 +10,7 @@ export function tasksReducer(state: TasksState, action: TasksAction) {
   switch (action.type) {
     case ADD_TASK: {
       const task = {
-        id: '',
+        id: v4(),
         description: action.description,
         ticked: false
       }

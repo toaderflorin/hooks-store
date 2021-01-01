@@ -38,6 +38,7 @@ export default function AppContextProvider(props: ChildrenProps) {
     try {
       await action(state, dispatch)
     } catch (error) {
+      // take appropriate action and report the error
       alert('The application encountered an error.')
     }
   }
