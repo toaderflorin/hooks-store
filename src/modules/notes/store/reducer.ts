@@ -11,13 +11,13 @@ export function notesReducer(state: NotesState, action: NotesAction) {
     case ADD_NOTE: {
       const note = {
         id: v4(),
-        description: action.description,
-        ticked: false
+        title: action.title,
+        description: action.description
       }
 
       return {
         ...state,
-        note: [...state.notes, note]
+        notes: [...state.notes, note]
       }
     }
 

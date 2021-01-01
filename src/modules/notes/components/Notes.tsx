@@ -1,7 +1,6 @@
 import { useContext, useRef } from 'react'
 import { AppContext } from '../../../AppContext'
 import * as noteActions from '../store/actions'
-import { notesReducer } from '../store/reducer'
 import { Note } from '../store/types'
 
 export default function Notes() {
@@ -21,16 +20,37 @@ export default function Notes() {
     execute(noteActions.removeNote(noteId))
   }
 
-  // function toggleTaskClick(taskId: string) {
-  //   execute(noteActions.toggleSize(taskId))
-  // }``
   const notes = state.notes.notes
 
   return (
     <div className="screen">
       <h1>Notes</h1>
+      <div>
+        <div>
+          <input ref={titleInputRef} type="text" />
+        </div>
+        <div>
+          <input ref={descriptionInputRef} type="text" />
+        </div>
+        <div>
+          <button onClick={addNoteClick}>Add</button>
+        </div>
+      </div>
+
       {notes.map((note: Note) => {
-        return null
+        return (
+          <div>
+            <div>
+              <b>{note.title}</b>
+            </div>
+            <div>
+              <span>{note.description}</span>
+            </div>
+            <div>
+              <button>Remove</button>
+            </div>
+          </div>
+        )
       })}
     </div>
   )

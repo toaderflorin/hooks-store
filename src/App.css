@@ -2,6 +2,23 @@ body {
   font-size: 13px;
 }
 
+button {
+  padding: 5px 15px;
+  background-color: #222;
+  border: none;
+  color: white;
+  height: 30px;
+  border-radius: 3px;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #666;
+  height: 30px;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
 .screen {
   margin-top: 100px;
   padding: 15px;

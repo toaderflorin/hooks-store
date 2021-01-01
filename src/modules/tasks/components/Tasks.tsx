@@ -30,6 +30,12 @@ export default function Tasks() {
         <button onClick={addTaskClick}>Add</button>
       </div>
       <div>
+        {tasks.length === 0 && (
+          <div>
+            No tasks to show.
+          </div>
+        )}
+
         {tasks.map((task: Task) => (
           <div className="task">
             <div className="task-description">

@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Nav from './modules/nav/components/Nav'
 import AppContextProvider from './AppContext'
 import Tasks from './modules/tasks/components/Tasks'
-import Settings from './modules/notes/components/Notes'
+import Notes from './modules/notes/components/Notes'
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
       <BrowserRouter>
         <Nav />
         <Route exact path="/" component={Tasks} />
-        <Route exact path="/notes" component={Settings} />
+        <Route exact path="/notes" component={Notes} />
       </BrowserRouter>
     </AppContextProvider>
   )
