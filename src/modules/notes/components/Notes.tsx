@@ -38,6 +38,8 @@ export default function Notes() {
         </div>
       </div>
 
+      <div className="space" />
+
       <div id="note-container">
         {notes.length === 0 && (
           <div>
@@ -48,10 +50,8 @@ export default function Notes() {
         {notes.map((note: Note) => {
           return (
             <div className="note" key={note.id}>
-              <div>
+              <div className="note-inner">
                 <b>{note.title}</b>
-              </div>
-              <div>
                 <span>{note.description}</span>
               </div>
               <div>

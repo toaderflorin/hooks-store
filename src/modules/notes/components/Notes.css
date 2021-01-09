@@ -12,8 +12,16 @@
 }
 
 .note {
-  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  background-color: #eee;
   width: 300px;
-  border-radius: 5px;
-  background-color: #eee;  
+  padding: 10px;
 }
+
+.note-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
