@@ -26,7 +26,7 @@ export default function Tasks() {
   return (
     <div className="screen">
       <h1>Tasks</h1>
-      <div style={{ display: 'flex', gap: '5px' }}>
+      <div id>
         <input ref={descriptionInputRef} placeholder="Task description" type="text" />
         <button onClick={addTaskClick}>Add</button>
       </div>

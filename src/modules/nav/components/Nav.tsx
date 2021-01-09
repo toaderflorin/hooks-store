@@ -6,11 +6,8 @@ export default function Nav() {
   return (
     <div id="nav">
       <div>
-        The title
-      </div>
-      <div>
-        <Link to="/">Tasks</Link>
-        <Link to="/notes">Notes</Link>
+        <Link className="link" to="/">Tasks</Link>
+        <Link className="link" to="/notes">Notes</Link>
       </div>
     </div>
   )
