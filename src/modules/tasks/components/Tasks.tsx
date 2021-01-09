@@ -25,10 +25,12 @@ export default function Tasks() {
 
   return (
     <div className="screen">
-      <div>
-        <input ref={descriptionInputRef} type="text" />
+      <h1>Tasks</h1>
+      <div style={{ display: 'flex', gap: '5px' }}>
+        <input ref={descriptionInputRef} placeholder="Task description" type="text" />
         <button onClick={addTaskClick}>Add</button>
       </div>
+      <div className="space" />
       <div>
         {tasks.length === 0 && (
           <div>

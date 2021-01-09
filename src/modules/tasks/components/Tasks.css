@@ -10,3 +10,7 @@
 .task-description {
   display: flex;
 }
+
+.space {
+  height: 10px;
+}

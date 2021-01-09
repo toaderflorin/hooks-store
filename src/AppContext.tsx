@@ -1,31 +1,12 @@
 import React, { useReducer, Dispatch } from 'react'
-import { notesReducer, initialNotesState } from './modules/notes/store/reducer'
-import { tasksReducer, initialTasksState } from './modules/tasks/store/reducer'
 import { AppState, ChildrenProps } from './modules/types'
-import { NotesAction } from './modules/notes/store/types'
-import { TasksAction } from './modules/tasks/store/types'
+import appReducer, { initialAppState, Action } from './appReducer'
 
 export type ExecuteFunc = (state: AppState, dispatch: Dispatch<any>) => Promise<void> | void
-
-type Action =
-  | NotesAction
-  | TasksAction
 
 export type AppContextType = {
   state: AppState
   execute: (action: ExecuteFunc) => Promise<void>
-}
-
-const initialAppState = {
-  tasks: initialTasksState,
-  notes: initialNotesState
-}
-
-function appReducer(state: AppState, action: Action) {
-  return {
-    notes: notesReducer(state.notes, action as NotesAction),
-    tasks: tasksReducer(state.tasks, action as TasksAction)
-  }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

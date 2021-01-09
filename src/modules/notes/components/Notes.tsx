@@ -2,6 +2,7 @@ import { useContext, useRef } from 'react'
 import { AppContext } from '../../../AppContext'
 import * as noteActions from '../store/actions'
 import { Note } from '../store/types'
+import './Notes.css'
 
 export default function Notes() {
   const { state, execute } = useContext(AppContext)
@@ -25,33 +26,41 @@ export default function Notes() {
   return (
     <div className="screen">
       <h1>Notes</h1>
-      <div>
+      <div id="add-container">
         <div>
-          <input ref={titleInputRef} type="text" />
+          <input ref={titleInputRef} placeholder="Note title" type="text" />
         </div>
         <div>
-          <input ref={descriptionInputRef} type="text" />
+          <input ref={descriptionInputRef} placeholder="Note description" type="text" />
         </div>
         <div>
           <button onClick={addNoteClick}>Add</button>
         </div>
       </div>
 
-      {notes.map((note: Note) => {
-        return (
+      <div id="note-container">
+        {notes.length === 0 && (
           <div>
-            <div>
-              <b>{note.title}</b>
-            </div>
-            <div>
-              <span>{note.description}</span>
-            </div>
-            <div>
-              <button>Remove</button>
-            </div>
+            No notes to show.
           </div>
-        )
-      })}
+        )}
+
+        {notes.map((note: Note) => {
+          return (
+            <div className="note" key={note.id}>
+              <div>
+                <b>{note.title}</b>
+              </div>
+              <div>
+                <span>{note.description}</span>
+              </div>
+              <div>
+                <button onClick={() => removeNoteClick(note.id)}>Remove</button>
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
