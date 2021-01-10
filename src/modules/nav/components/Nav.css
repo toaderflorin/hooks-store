@@ -5,6 +5,12 @@
   right: 0;
   background-color: black;
   color: white;
+  padding-left: 15px;
+}
+
+#link-container {
+  display: flex;
+  gap: 10px;
 }
 
 .link {
@@ -12,6 +18,5 @@
   text-decoration: none;
   height: 40px;
   color: white;
-  padding: 5px;
   align-items: center;
 }

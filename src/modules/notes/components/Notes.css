@@ -14,9 +14,10 @@
 .note {
   display: grid;
   grid-template-columns: 1fr 80px;
-  background-color: #eee;
+  background-color: #e5e5e5;
   width: 300px;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .note-inner {
